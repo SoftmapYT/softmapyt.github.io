@@ -1,11 +1,3 @@
-h1 {
-    color: darkred
-}
-
-h2 {
-    color: royalblue
-}
-
 @font-face {
     font-family: IBMPlexSans;
     font-style: normal;
@@ -40,10 +32,12 @@ h2 {
 
 h1 {
     font-family: IBMPlexSans;
+    color: darkred;
 }
 
 h2 {
     font-family: IBMPlexSans;
+    color: royalblue;
 }
 
 h3 {
