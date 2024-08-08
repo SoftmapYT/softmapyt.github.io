@@ -5,3 +5,35 @@ h1 {
 h2 {
     color: royalblue
 }
+
+@font-face {
+    font-family: IBMPlexSans;
+    font-style: normal;
+    font-weight: 400;
+    src: url(files/fonts/IBMPlexSans/ibm-plex-sans-v19-latin-regular.woff2) format('woff2')
+    ;
+}
+
+@font-face {
+    font-family: IBMPlexSans;
+    font-style: italic;
+    font-weight: 400;
+    src: url(files/fonts/IBMPlexSans/ibm-plex-sans-v19-latin-italic.woff2) format('woff2')
+    ;
+}
+
+@font-face {
+    font-family: IBMPlexSans;
+    font-style: normal;
+    font-weight: 700;
+    src: url(files/fonts/IBMPlexSans/ibm-plex-sans-v19-latin-700regular.woff2) format('woff2')
+    ;
+}
+
+@font-face {
+    font-family: IBMPlexSans;
+    font-style: italic;
+    font-weight: 700;
+    src: url(files/fonts/IBMPlexSans/ibm-plex-sans-v19-latin-700italic.woff2) format('woff2')
+    ;
+}
