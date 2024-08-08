@@ -38,6 +38,34 @@ h2 {
     ;
 }
 
-body {
+h1 {
+    font-family: IBMPlexSans;
+}
+
+h2 {
+    font-family: IBMPlexSans;
+}
+
+h3 {
+    font-family: IBMPlexSans;
+}
+
+h4 {
+    font-family: IBMPlexSans;
+}
+
+h5 {
+    font-family: IBMPlexSans;
+}
+
+h6 {
+    font-family: IBMPlexSans;
+}
+
+p {
+    font-family: IBMPlexSans;
+}
+
+blockquote {
     font-family: IBMPlexSans;
 }
