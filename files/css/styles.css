@@ -37,3 +37,7 @@ h2 {
     src: url(files/fonts/IBMPlexSans/ibm-plex-sans-v19-latin-700italic.woff2) format('woff2')
     ;
 }
+
+body {
+    font-family: IBMPlexSans;
+}
