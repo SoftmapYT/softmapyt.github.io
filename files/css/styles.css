@@ -1,4 +1,5 @@
 @font-face {
+    font-display: swap;
     font-family: IBMPlexSans;
     font-style: normal;
     font-weight: 400;
@@ -7,6 +8,7 @@
 }
 
 @font-face {
+    font-display: swap;
     font-family: IBMPlexSans;
     font-style: italic;
     font-weight: 400;
@@ -15,6 +17,7 @@
 }
 
 @font-face {
+    font-display: swap;
     font-family: IBMPlexSans;
     font-style: normal;
     font-weight: 700;
@@ -23,6 +26,7 @@
 }
 
 @font-face {
+    font-display: swap;
     font-family: IBMPlexSans;
     font-style: italic;
     font-weight: 700;
@@ -30,36 +34,14 @@
     ;
 }
 
+body {
+    font-family: IBMPlexSans, DIN, sans-serif;
+}
+
 h1 {
-    font-family: IBMPlexSans;
     color: darkred;
 }
 
 h2 {
-    font-family: IBMPlexSans;
     color: royalblue;
-}
-
-h3 {
-    font-family: IBMPlexSans;
-}
-
-h4 {
-    font-family: IBMPlexSans;
-}
-
-h5 {
-    font-family: IBMPlexSans;
-}
-
-h6 {
-    font-family: IBMPlexSans;
-}
-
-p {
-    font-family: IBMPlexSans;
-}
-
-blockquote {
-    font-family: IBMPlexSans;
 }
