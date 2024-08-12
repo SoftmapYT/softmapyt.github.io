@@ -10,3 +10,23 @@ h1 {
 h2 {
     color: royalblue;
 }
+a:link {
+    color: darkred;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  a:visited {
+    color: darkred;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  a:hover {
+    color: darkred;
+    background-color: transparent;
+    text-decoration: noen;
+  }
+  a:active {
+    color: darkred;
+    background-color: transparent;
+    text-decoration: none;
+  }
