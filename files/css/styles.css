@@ -12,22 +12,22 @@ h2 {
     color: royalblue;
 }
 a:link {
-    color: darkred;
+    color: rgb(255, 100, 100);
     background-color: transparent;
-    text-decoration: none;
+    text-decoration: underline;
   }
   a:visited {
-    color: darkred;
+    color: red;
     background-color: transparent;
-    text-decoration: none;
+    text-decoration: underline;
   }
   a:hover {
-    color: darkred;
+    color: rgb(255, 100, 100);
     background-color: transparent;
-    text-decoration: noen;
+    text-decoration: underline;
   }
   a:active {
-    color: darkred;
+    color: rgb(255, 100, 100);
     background-color: transparent;
-    text-decoration: none;
+    text-decoration: underline;
   }
