@@ -65,4 +65,5 @@ a:link {
   
   .dropdown-content {
     display: none; 
-    position: absolute; /* Position relative to the dropdown
+    position: absolute; /* Position relative to the dropdown */
+  }
