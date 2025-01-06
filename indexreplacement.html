@@ -45,6 +45,58 @@
 		<script>
 			document.write("Last modified: This page was last modified on " + document.lastModified)
 		</script><br>
+		
+		<script>
+			function detectBrowser() {
+				const userAgent = navigator.userAgent.toLowerCase();
+
+				if (userAgent.indexOf('chrome') > -1) {
+					return 'Chrome';
+				} else if (userAgent.indexOf('firefox') > -1) {
+					return 'Firefox';
+				} else if (userAgent.indexOf('safari') > -1) {
+					return 'Safari';
+				} else if (userAgent.indexOf('edge') > -1) {
+					return 'Edge';
+				} else if (userAgent.indexOf('msie') > -1 || userAgent.indexOf('trident') > -1) {
+					return 'Internet Explorer';
+				} else {
+					return 'Other';
+				}
+			}
+
+			const browser = detectBrowser();
+			console.log("Browser:", browser);
+			document.write("Browser: " + browser)
+		</script><br>
+		<script>
+			function detectOS() {
+				const userAgent = navigator.userAgent.toLowerCase();
+				const platform = navigator.platform.toLowerCase();
+
+				if (/windows/.test(userAgent)) {
+					return "Windows";
+				} else if (/mac/.test(platform)) {
+					return "macOS";
+				} else if (/linux/.test(userAgent)) {
+					return "Linux";
+				} else if (/android/.test(userAgent)) {
+					return "Android";
+				} else if (/iphone/.test(userAgent)) {
+					return "iOS"; 
+				} else if (/ipad/.test(userAgent)) {
+					return "iPadOS"; 
+				} else if (/cros/.test(userAgent)) { 
+					return "Chrome OS"; 
+				} else {
+					return "Other";
+				}
+			}
+
+			const os = detectOS();
+			console.log("Operating System:", os);
+			document.write("Operating System: " + os)
+		</script><br>
 		<a href="https://www.youtube.com/@SoftmapYT">My YouTube</a>
 		<p>
 			This is a paragraph with an <span style="font-variant: small-caps">inline element (e.g. small caps)</span> that flows right along with the rest of the text.
