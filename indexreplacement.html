@@ -1,48 +1,46 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-		<link rel="stylesheet" href="files/css/styles.css">
-		<meta charset="utf-8">
-		<link rel="icon" type="image/x-icon" href="files/graphics/images/logos/favicon0.ico">
-		<title>Test</title>
-		<script>
-			//alert("Hello, Javascript World!");
-		</script>
-		<noscript>Hey! It looks like you have JavaScript turned off! That's ok, but some features here might not work with JavaScript turned off.</noscript>
-	</head>
-	<body>
-    	<header>
-			<a href="/"><img src="files/graphics/images/logos/v2.png" alt="Softmap Site Logo"></a>
-		</header>
-		<nav>
-			<ul>
-			    <li><a href="/">Home</a></li>
-			    <li class="dropdown">
-				    <a href="#" class="dropbtn">Videos</a>
-				    <div class="dropdown-content">
-				    	<a href="#">Gaming</a>
-				  		<a href="#">Projects</a>
-				   		<a href="#">Coding</a>
-						<a href="#">Shorts</a>
-				 	</div>
-			  	</li>
-			    <li class="dropdown">
-				    <a href="#" class="dropbtn">Downloads</a>
-				    <div class="dropdown-content">
-				    	<a href="#">Service 1</a>
-				  		<a href="#">Service 2</a>
-				   		<a href="#">Service 3</a>
-				 	</div>
-			  	</li>
-				<li><a href="#">About</a></li>
-			</ul>
-		</nav>
-		<br>A bunch of HTML stuff here, the actual replacement for the index.html file will be here soon!<br>
+<head>
+	<meta charset="utf-8">
+	<title>Test</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="files/css/styles.css">
+	<link rel="icon" type="image/x-icon" href="files/graphics/images/logos/favicon0.ico">
+	<noscript>Hey! It looks like you have JavaScript turned off! That's ok, but some features here might not work with JavaScript turned off.</noscript>
+</head>
+<body>
+	<header>
+		<a href="/"><img src="files/graphics/images/logos/v2.png" alt="Softmap Site Logo"></a>
+	</header>
+	<nav>
+		<ul>
+			<li><a href="/">Home</a></li>
+			<li class="dropdown"></li>
+				<a href="#" class="dropbtn">Videos</a>
+				<div class="dropdown-content"></div>
+					<a href="#">Gaming</a>
+					<a href="#">Projects</a>
+					<a href="#">Coding</a>
+					<a href="#">Shorts</a>
+				</div>
+			</li>
+			<li class="dropdown">
+				<a href="#" class="dropbtn">Downloads</a>
+				<div class="dropdown-content">
+					<a href="#">Service 1</a>
+					<a href="#">Service 2</a>
+					<a href="#">Service 3</a>
+				</div>
+			</li>
+			<li><a href="#">About</a></li>
+		</ul>
+	</nav>
+	<main>
+		<p>A bunch of HTML stuff here, the actual replacement for the index.html file will be here soon!</p>
 		<hr>
-		Hello, HTML World! This is <strong>very <em>important</em>!</strong>
+		<p>Hello, HTML World! This is <strong>very <em>important</em>!</strong></p>
 		<hr align="left" width="50%">
 		<h1>Header 1: Hello, External CSS World!</h1>
 		<h2>Header 2: Hello, External CSS World!</h2>
@@ -52,153 +50,87 @@
 		<h6>Header 6</h6>
 		<h1 style="font-size: 72px;">Hello, Inline CSS World!</h1>
 		<script>
-			document.write("Last modified: This page was last modified on " + document.lastModified)
-		</script><br>
-		
+			document.write("Last modified: This page was last modified on " + document.lastModified);
+		</script>
+		<br>
 		<script>
 			function detectBrowser() {
 				const userAgent = navigator.userAgent.toLowerCase();
-
-				if (userAgent.indexOf('chrome') > -1) {
-					return 'Chrome';
-				} else if (userAgent.indexOf('firefox') > -1) {
-					return 'Firefox';
-				} else if (userAgent.indexOf('safari') > -1) {
-					return 'Safari';
-				} else if (userAgent.indexOf('edge') > -1) {
-					return 'Edge';
-				} else if (userAgent.indexOf('msie') > -1 || userAgent.indexOf('trident') > -1) {
-					return 'Internet Explorer';
-				} else {
-					return 'Other';
-				}
+				if (userAgent.indexOf('chrome') > -1) return 'Chrome';
+				if (userAgent.indexOf('firefox') > -1) return 'Firefox';
+				if (userAgent.indexOf('safari') > -1) return 'Safari';
+				if (userAgent.indexOf('edge') > -1) return 'Edge';
+				if (userAgent.indexOf('msie') > -1 || userAgent.indexOf('trident') > -1) return 'Internet Explorer';
+				return 'Other';
 			}
-
 			const browser = detectBrowser();
 			console.log("Browser:", browser);
-			document.write("Browser: " + browser)
-		</script><br>
+			document.write("Browser: " + browser);
+		</script>
+		<br>
 		<script>
 			function detectOS() {
 				const userAgent = navigator.userAgent.toLowerCase();
 				const platform = navigator.platform.toLowerCase();
-
-				if (/windows/.test(userAgent)) {
-					return "Windows";
-				} else if (/mac/.test(platform)) {
-					return "macOS";
-				} else if (/linux/.test(userAgent)) {
-					return "Linux";
-				} else if (/android/.test(userAgent)) {
-					return "Android";
-				} else if (/iphone/.test(userAgent)) {
-					return "iOS"; 
-				} else if (/ipad/.test(userAgent)) {
-					return "iPadOS"; 
-				} else if (/cros/.test(userAgent)) { 
-					return "Chrome OS"; 
-				} else if (/freebsd/.test(userAgent)) { 
-					return "FreeBSD"; 
-				} else if (/openbsd/.test(userAgent)) { 
-					return "OpenBSD"; 
-				} else if (/sunos/.test(userAgent)) { 
-					return "Solaris"; 
-				} else if (/fuchsia/.test(userAgent)) { 
-					return "Fuchsia";
-				} else if (/webos/.test(userAgent)) { 
-					return "webOS";
-				} else if (/tizen/.test(userAgent)) { 
-					return "Tizen";
-				} else if (/haiku/.test(userAgent)) { 
-					return "Haiku OS";
-				} else if (/plan 9/.test(userAgent)) { 
-					return "Plan 9"; 
-				} else if (/beos/.test(userAgent)) { 
-					return "BeOS"; 
-				} else if (/qnx/.test(userAgent)) { 
-					return "QNX"; 
-				} else if (/hp-ux/.test(userAgent)) { 
-					return "HP-UX"; 
-				} else if (/aix/.test(userAgent)) { 
-					return "AIX"; 
-				} else if (/irix/.test(userAgent)) { 
-					return "IRIX"; 
-				} else if (/symbian/.test(userAgent)) { 
-					return "Symbian";
-				} else if (/blackberry/.test(userAgent)) { 
-					return "BlackBerry";
-				} else if (/palm/.test(userAgent)) { 
-					return "Palm OS";
-				} else if (/sailfish/.test(userAgent)) { 
-					return "Sailfish OS";
-				} else if (/ubuntu/.test(userAgent)) { 
-					return "Ubuntu Touch";
-				} else if (/firefoxos/.test(userAgent)) { 
-					return "Firefox OS";
-				} else if (/webosbrowser/.test(userAgent)) { 
-					return "webOS";
-				} else if (/nintendo/.test(userAgent)) { 
-					return "Nintendo"; 
-				} else if (/playstation/.test(userAgent)) { 
-					return "PlayStation";
-				} else if (/xbox/.test(userAgent)) { 
-					return "Xbox"; 
-				} else if (/wii/.test(userAgent)) { 
-					return "Wii"; 
-				} else if (/wiiu/.test(userAgent)) { 
-					return "Wii U";
-				} else if (/switch/.test(userAgent)) { 
-					return "Nintendo Switch"; 
-				} else if (/psp/.test(userAgent)) { 
-					return "PlayStation Portable"; 
-				} else if (/vita/.test(userAgent)) { 
-					return "PlayStation Vita"; 
-				} else if (/gamecube/.test(userAgent)) { 
-					return "GameCube"; 
-				} else if (/dreamcast/.test(userAgent)) { 
-					return "Dreamcast"; 
-				} else if (/sega/.test(userAgent)) { 
-					return "Sega"; 
-				} else if (/roku/.test(userAgent)) { 
-					return "Roku";
-				} else if (/apple tv/.test(userAgent)) { 
-					return "Apple TV"; 
-				} else if (/android tv/.test(userAgent)) { 
-					return "Android TV"; 
-				} else if (/fire tv/.test(userAgent)) { 
-					return "Fire TV"; 
-				} else if (/chromecast/.test(userAgent)) { 
-					return "Chromecast"; 
-				} else if (/roku/.test(userAgent)) { 
-					return "Roku";
-				} else if (/tvos/.test(userAgent)) { 
-					return "tvOS"; 
-				} else if (/watchos/.test(userAgent)) { 
-					return "watchOS"; 
-				} else if (/harmonyos/.test(userAgent)) { 
-					return "HarmonyOS";
-				} else if (/silk/.test(userAgent)) { 
-					return "Kindle Fire";
-				} else if (/nintendo 3ds/.test(userAgent)) { // Add Nintendo 3DS specifically
-					return "Nintendo 3DS";
-				} else {
-					return "Other";
-				}
+				if (/windows/.test(userAgent)) return "Windows";
+				if (/mac/.test(platform)) return "macOS";
+				if (/linux/.test(userAgent)) return "Linux";
+				if (/android/.test(userAgent)) return "Android";
+				if (/iphone/.test(userAgent)) return "iOS";
+				if (/ipad/.test(userAgent)) return "iPadOS";
+				if (/cros/.test(userAgent)) return "Chrome OS";
+				if (/freebsd/.test(userAgent)) return "FreeBSD";
+				if (/openbsd/.test(userAgent)) return "OpenBSD";
+				if (/sunos/.test(userAgent)) return "Solaris";
+				if (/fuchsia/.test(userAgent)) return "Fuchsia";
+				if (/webos/.test(userAgent)) return "webOS";
+				if (/tizen/.test(userAgent)) return "Tizen";
+				if (/haiku/.test(userAgent)) return "Haiku OS";
+				if (/plan 9/.test(userAgent)) return "Plan 9";
+				if (/beos/.test(userAgent)) return "BeOS";
+				if (/qnx/.test(userAgent)) return "QNX";
+				if (/hp-ux/.test(userAgent)) return "HP-UX";
+				if (/aix/.test(userAgent)) return "AIX";
+				if (/irix/.test(userAgent)) return "IRIX";
+				if (/symbian/.test(userAgent)) return "Symbian";
+				if (/blackberry/.test(userAgent)) return "BlackBerry";
+				if (/palm/.test(userAgent)) return "Palm OS";
+				if (/sailfish/.test(userAgent)) return "Sailfish OS";
+				if (/ubuntu/.test(userAgent)) return "Ubuntu Touch";
+				if (/firefoxos/.test(userAgent)) return "Firefox OS";
+				if (/webosbrowser/.test(userAgent)) return "webOS";
+				if (/nintendo/.test(userAgent)) return "Nintendo";
+				if (/playstation/.test(userAgent)) return "PlayStation";
+				if (/xbox/.test(userAgent)) return "Xbox";
+				if (/wii/.test(userAgent)) return "Wii";
+				if (/wiiu/.test(userAgent)) return "Wii U";
+				if (/switch/.test(userAgent)) return "Nintendo Switch";
+				if (/psp/.test(userAgent)) return "PlayStation Portable";
+				if (/vita/.test(userAgent)) return "PlayStation Vita";
+				if (/gamecube/.test(userAgent)) return "GameCube";
+				if (/dreamcast/.test(userAgent)) return "Dreamcast";
+				if (/sega/.test(userAgent)) return "Sega";
+				if (/roku/.test(userAgent)) return "Roku";
+				if (/apple tv/.test(userAgent)) return "Apple TV";
+				if (/android tv/.test(userAgent)) return "Android TV";
+				if (/fire tv/.test(userAgent)) return "Fire TV";
+				if (/chromecast/.test(userAgent)) return "Chromecast";
+				if (/tvos/.test(userAgent)) return "tvOS";
+				if (/watchos/.test(userAgent)) return "watchOS";
+				if (/harmonyos/.test(userAgent)) return "HarmonyOS";
+				if (/silk/.test(userAgent)) return "Kindle Fire";
+				if (/nintendo 3ds/.test(userAgent)) return "Nintendo 3DS";
+				return "Other";
 			}
-
 			const os = detectOS();
 			console.log("Operating System:", os);
-			document.write("Operating System: " + os)
-		</script><br>
+			document.write("Operating System: " + os);
+		</script>
+		<br>
 		<a href="https://www.youtube.com/@SoftmapYT">My YouTube</a>
-		<p>
-			This is a paragraph with an <span style="font-variant: small-caps">inline element (e.g. small caps)</span> that flows right along with the rest of the text.
-		</p>
-		Here's a quote that I found off of the Internet:
-		<blockquote>
-			He who least needs tomorrow, will most gladly greet tomorrow. - Epicurus
-		</blockquote>
-		But what is always there but never arrives? <q>Tomorrow!</q>
+		<p>This is a paragraph with an <span style="font-variant: small-caps">inline element (e.g. small caps)</span> that flows right along with the rest of the text.</p>
+		<blockquote>He who least needs tomorrow, will most gladly greet tomorrow. - Epicurus</blockquote>
+		<p>But what is always there but never arrives? <q>Tomorrow!</q></p>
 		<h1>LIST TIME!!!!</h1>
 		<ul>
 			<li>1</li>
@@ -236,10 +168,8 @@
 			<li>9</li>
 			<li>10</li>
 		</ol>
-		&lt;softmap&gt; (<em>TEXT GOES HERE!!!!</em>) &lt;/softmap&gt;
-		<p>
-			Here are some more text tags:
-		</p>
+		<p>&lt;softmap&gt; (<em>TEXT GOES HERE!!!!</em>) &lt;/softmap&gt;</p>
+		<p>Here are some more text tags:</p>
 		<abbr title="abbreviation">&lt;abbr&gt;</abbr>
 		<address>&lt;address&gt;</address>
 		<cite><a href="https://softmapyt.github.io">&lt;cite&gt;</a></cite>
@@ -258,20 +188,10 @@
 		<del>&lt;del&gt;</del><br>
 		<sub>&lt;sub&gt;</sub><br>
 		<sup>&lt;sup&gt;</sup><br>
-		<video src="files/graphics/videos/mp4/tanav_playing_piano.mp4"
-		poster="files/graphics/images/png/tanav_playing_piano.jpg"
-		width="313"
-		height="556"
-		autoplay
-		controls
-		loop>
-		</video><br>
+		<video src="files/graphics/videos/mp4/tanav_playing_piano.mp4" poster="files/graphics/images/png/tanav_playing_piano.jpg" width="313" height="556" autoplay controls loop></video><br>
 		<iframe width="560" height="315" src="https://www.youtube.com/embed/Qskm9MTz2V4?si=dspJ4gnVkPuI9M9l" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br>
-		<audio src="files/graphics/audio/mp3/smb_rush_a.mp3"
-		autoplay
-		controls
-		loop>
-		</audio>
+		<audio src="files/graphics/audio/mp3/smb_rush_a.mp3" autoplay controls loop></audio>
 		<a href="downloads/downloads.html">01.html</a>
-	</body>
+	</main>
+</body>
 </html>
