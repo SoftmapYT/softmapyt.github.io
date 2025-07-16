@@ -17,9 +17,9 @@
 	<nav>
 		<ul>
 			<li><a href="/">Home</a></li>
-			<li class="dropdown"></li>
+			<li class="dropdown">
 				<a href="#" class="dropbtn">Videos</a>
-				<div class="dropdown-content"></div>
+				<div class="dropdown-content">
 					<a href="#">Gaming</a>
 					<a href="#">Projects</a>
 					<a href="#">Coding</a>
@@ -41,7 +41,9 @@
 		<p>A bunch of HTML stuff here, the actual replacement for the index.html file will be here soon!</p>
 		<hr>
 		<p>Hello, HTML World! This is <strong>very <em>important</em>!</strong></p>
-		<hr align="left" width="50%">
+		<hr style="border-width: 5px; border-color: rgb(255, 100, 100);" align="left" width="50%">
+		<hr style="border-width: 5px; border-color: red;" align="center" width="50%">
+		<hr style="border-width: 5px; border-color: darkred;" align="right" width="50%">
 		<h1>Header 1: Hello, External CSS World!</h1>
 		<h2>Header 2: Hello, External CSS World!</h2>
 		<h3>Header 3</h3>
@@ -51,6 +53,7 @@
 		<h1 style="font-size: 72px;">Hello, Inline CSS World!</h1>
 		<script>
 			document.write("Last modified: This page was last modified on " + document.lastModified);
+
 		</script>
 		<br>
 		<script>
@@ -172,7 +175,7 @@
 		<p>Here are some more text tags:</p>
 		<abbr title="abbreviation">&lt;abbr&gt;</abbr>
 		<address>&lt;address&gt;</address>
-		<cite><a href="https://softmapyt.github.io">&lt;cite&gt;</a></cite>
+		<cite><a href="https://softmapyt.github.io">&lt;cite&gt;</a></cite><br>
 		<code>&lt;code&gt;</code><br>
 		<var>&lt;var&gt;</var><br>
 		<samp>&lt;samp&gt;</samp><br>
@@ -192,6 +195,229 @@
 		<iframe width="560" height="315" src="https://www.youtube.com/embed/Qskm9MTz2V4?si=dspJ4gnVkPuI9M9l" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br>
 		<audio src="files/graphics/audio/mp3/smb_rush_a.mp3" autoplay controls loop></audio>
 		<a href="downloads/downloads.html">01.html</a>
+		<table>
+			<caption>Table Caption</caption>
+			<thead>
+				<tr>
+					<th>Header 1</th>
+					<th>Header 2</th>
+					<th>Header 3</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Data 1</td>
+					<td>Data 2</td>
+					<td>Data 3</td>
+				</tr>
+				<tr>
+					<td>Data 4</td>
+					<td>Data 5</td>
+					<td>Data 6</td>
+				</tr>
+				<tr>
+					<td>Data 7</td>
+					<td>Data 8</td>
+					<td>Data 9</td>
+				</tr>
+				<tr>
+					<td>Data 10</td>
+					<td>Data 11</td>
+					<td>Data 12</td>
+				</tr>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="3">Footer Data</td>
+				</tr>
+			</tfoot>
+		</table>
+		<p>Here is a link to <a href="https://www.youtube.com/@SoftmapYT">SoftmapYT</a> on YouTube.</p>
+		<h2>Here are some different types of web forms that you can use:</h2>
+		<form>
+			<label for="text">Text:</label>
+			<input type="text" id="text" name="text"><br><br>
+
+			<label for="number">Number:</label>
+			<input type="number" id="number" name="number"><br><br>
+
+			<label for="email">Email:</label>
+			<input type="email" id="email" name="email"><br><br>
+
+			<label for="url">URL:</label>
+			<input type="url" id="url" name="url"><br><br>
+
+			<label for="phone">Phone:</label>
+			<input type="tel" id="phone" name="phone"><br><br>
+
+			<label for="time">Time:</label>
+			<input type="time" id="time" name="time"><br><br>
+
+			<label for="password">Password:</label>
+			<input type="password" id="password" name="password"><br><br>
+
+			<label for="search">Search:</label>
+			<input type="search" id="search" name="search"><br><br>
+
+			<label for="textarea">Textarea:</label>
+			<textarea id="textarea" name="textarea"></textarea><br><br>
+
+			<label for="date">Date:</label>
+			<input type="date" id="date" name="date"><br><br>
+
+			<label>Checkbox:</label>
+			<input type="checkbox" id="checkbox1" name="checkbox1" value="1">
+			<label for="checkbox1">Option 1</label>
+			<input type="checkbox" id="checkbox2" name="checkbox2" value="2">
+			<label for="checkbox2">Option 2</label><br><br>
+
+			<label>Radio:</label>
+			<input type="radio" id="radio1" name="radio" value="1">
+			<label for="radio1">Option 1</label>
+			<input type="radio" id="radio2" name="radio" value="2">
+			<label for="radio2">Option 2</label><br><br>
+
+			<label for="select">Select:</label>
+			<select id="select" name="select">
+				<option value="option1">Option 1</option>
+				<option value="option2">Option 2</option>
+				<option value="option3">Option 3</option>
+			</select><br><br>
+
+			<label for="color">Color (This will change the background color of the page and will invert the text color accordingly):</label>
+			<input type="color" id="color" name="color" value="#ffffff" aria-label="Choose background color">
+			<br><br>
+			<script>
+				const colorInput = document.getElementById('color');
+				colorInput.addEventListener('input', function () {
+					document.body.style.backgroundColor = this.value;
+					// Calculate luminance for contrast
+					function luminance(hex) {
+						hex = hex.replace('#', '');
+						const r = parseInt(hex.substr(0,2),16)/255;
+						const g = parseInt(hex.substr(2,2),16)/255;
+						const b = parseInt(hex.substr(4,2),16)/255;
+						const a = [r,g,b].map(function(v){
+							return v <= 0.03928 ? v/12.92 : Math.pow((v+0.055)/1.055,2.4);
+						});
+						return 0.2126*a[0] + 0.7152*a[1] + 0.0722*a[2];
+					}
+					const lum = luminance(this.value);
+					document.body.style.color = lum > 0.5 ? '#000' : '#fff';
+				});
+			</script>
+
+			<label for="week">Week:</label>
+			<input type="week" id="week" name="week"><br><br>
+			
+			<label for="file">File:</label>
+			<input type="file" id="file" name="file"><br><br>
+
+			<label for="range">Range:</label>
+			<input type="range" id="range" name="range" min="0" max="100"><br><br>
+
+			<label for="month">Month:</label>
+			<input type="month" id="month" name="month"><br><br>
+
+			<label for="year">Year:</label>
+			<input type="number" id="year" name="year" min="1900" max="2100" step="1" placeholder="YYYY"><br><br>
+
+			<input type="submit" value="Submit">
+		</form>
+		
+		<div id="colorWheel" style="
+			width: 200px;
+			height: 200px;
+			border-radius: 50%;
+			background: conic-gradient(red, yellow, lime, aqua, blue, magenta, red);
+			margin: 32px auto;
+			box-shadow: 0 2px 16px rgba(0,0,0,0.15);
+			cursor: crosshair;
+			position: relative;
+			rotate: deg;
+		">
+			<div id="colorSelector" style="
+				position: absolute;
+				width: 20px;
+				height: 20px;
+				border: 2px solid #fff;
+				border-radius: 50%;
+				box-shadow: 0 0 4px #0006;
+				pointer-events: none;
+				left: 90px; top: 90px;
+				display: none;
+				background: transparent;
+			"></div>
+		</div>
+		<div style="text-align:center; margin-bottom:16px;">
+			<span id="pickedColor" style="display:inline-block;width:32px;height:32px;border-radius:50%;vertical-align:middle;border:1px solid #ccc;margin-right:8px;"></span>
+			<span id="colorValue">Pick a color!</span>
+		</div>
+		<script>
+		const colorWheel = document.getElementById('colorWheel');
+		const pickedColor = document.getElementById('pickedColor');
+		const colorValue = document.getElementById('colorValue');
+		const colorSelector = document.getElementById('colorSelector');
+
+		function getColorFromWheel(e) {
+			const rect = colorWheel.getBoundingClientRect();
+			const x = e.clientX - rect.left - rect.width/2;
+			const y = e.clientY - rect.top - rect.height/2;
+			const radius = Math.sqrt(x*x + y*y);
+			if (radius > rect.width/2) return null; // outside wheel
+			const angle = Math.atan2(y, x) * 180 / Math.PI + 180;
+			const hue = Math.round(angle);
+			const sat = Math.min(100, Math.round((radius / (rect.width/2)) * 100));
+			return { color: `hsl(${hue}, ${sat}%, 50%)`, x, y, hue, sat };
+		}
+
+		function luminance(h, s, l) {
+			s /= 100; l /= 100;
+			const k = n => (n + h/30) % 12;
+			const a = s * Math.min(l, 1 - l);
+			const f = n => l - a * Math.max(-1, Math.min(Math.min(k(n) - 3, 9 - k(n)), 1));
+			const r = f(0), g = f(8), b = f(4);
+			return 0.2126*r + 0.7152*g + 0.0722*b;
+		}
+
+		function setBgAndText(color, hue, sat) {
+			document.body.style.background = color;
+			let textColor = '#000';
+			const lum = luminance(hue, sat, 50);
+			textColor = lum > 0.5 ? '#000' : '#fff';
+			document.body.style.color = textColor;
+		}
+
+		colorWheel.addEventListener('mousemove', function(e) {
+			const result = getColorFromWheel(e);
+			if (result) {
+				pickedColor.style.background = result.color;
+				colorValue.textContent = result.color;
+				colorWheel.title = result.color;
+				// Move selector
+				colorSelector.style.display = 'block';
+				const cx = result.x + colorWheel.offsetWidth/2 - colorSelector.offsetWidth/2;
+				const cy = result.y + colorWheel.offsetHeight/2 - colorSelector.offsetHeight/2;
+				colorSelector.style.left = cx + 'px';
+				colorSelector.style.top = cy + 'px';
+				colorSelector.style.background = result.color;
+				// Real-time background and text color update
+				setBgAndText(result.color, result.hue, result.sat);
+			} else {
+				pickedColor.style.background = '';
+				colorValue.textContent = 'Pick a color!';
+				colorWheel.title = '';
+				colorSelector.style.display = 'none';
+			}
+		});
+
+		colorWheel.addEventListener('mouseleave', function() {
+			pickedColor.style.background = '';
+			colorValue.textContent = 'Pick a color!';
+			colorWheel.title = '';
+			colorSelector.style.display = 'none';
+		});
+		</script>
 	</main>
 </body>
 </html>
