@@ -1,112 +1,97 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-		<link rel="stylesheet" href="files/css/styles.css">
-		<meta charset="utf-8">
-		<title>Test</title>
-		<script>
-			//alert("Hello, Javascript World!");
-		</script>
-	</head>
-	<body>
-        <img src="files/graphics/images/logos/v1.png" alt="Softmap Site Logo" title="Softmap Site Logo"><h1></h1><br>
-		Hello, HTML World! This is <strong>very <em>important</em>!</strong>
-		<hr align="left" width="50%">
-		<h1>Header 1: Hello, External CSS World!</h1>
-		<h2>Header 2: Hello, External CSS World!</h2>
-		<h3>Header 3</h3>
-		<h4>Header 4</h4>
-		<h5>Header 5</h5>
-		<h6>Header 6</h6>
-		<h1 style="font-size: 72px;">Hello, Inline CSS World!</h1>
-		<script>
-			document.write("Last modified: This page was last modified on " + document.lastModified)
-		</script><br>
-		<a href="https://www.youtube.com/@SoftmapYT">My YouTube</a>
-		<p>
-			This is a paragraph with an <span style="font-variant: small-caps">inline element (e.g. small caps)</span> that flows right along with the rest of the text.
-		</p>
-		Here's a quote that I found off of the Internet:
-		<blockquote>
-			<q>He who least needs tomorrow, will most gladly greet tomorrow.</q> - Epicurus
-		</blockquote>
-		But what is always there but never arrives? <q>Tomorrow!</q>
-		<h1>LIST TIME!!!!</h1>
-		<ul>
-			<li>1</li>
-			<li>2</li>
-			<li>3</li>
-			<li>4</li>
-			<li>5</li>
-			<li>6</li>
-			<li>7</li>
-			<li>8</li>
-			<li>9</li>
-			<li>10</li>
-		</ul>
-		<menu>
-			<li>1</li>
-			<li>2</li>
-			<li>3</li>
-			<li>4</li>
-			<li>5</li>
-			<li>6</li>
-			<li>7</li>
-			<li>8</li>
-			<li>9</li>
-			<li>10</li>
-		</menu>
-		<ol>
-			<li>1</li>
-			<li>2</li>
-			<li>3</li>
-			<li>4</li>
-			<li>5</li>
-			<li>6</li>
-			<li>7</li>
-			<li>8</li>
-			<li>9</li>
-			<li>10</li>
-		</ol>
-		&lt;softmap&gt; (<em>TEXT GOES HERE!!!!</em>) &lt;/softmap&gt;
-		<p>
-			Here are some more text tags:
-		</p>
-		<abbr title="abbreviation">&lt;abbr&gt;</abbr>
-		<address>&lt;address&gt;</address>
-		<cite><a href="https://softmapyt.github.io">&lt;cite&gt;</a></cite>
-		<code>&lt;code&gt;</code><br>
-		<var>&lt;var&gt;</var><br>
-		<samp>&lt;samp&gt;</samp><br>
-		<dfn>&lt;dfn&gt;</dfn><br>
-		<dl>
-			<dt>&lt;dt&gt;: (&lt;dl&gt;)</dt>
-			<dd>&lt;dd&gt;: (&lt;dl&gt;)</dd>
-		</dl>
-		<kbd>&lt;kbd&gt;</kbd><br>
-		<mark>&lt;mark&gt;</mark><br>
-		<pre>&lt;pre&gt;</pre>
-		<s>&lt;s&gt;</s><br>
-		<del>&lt;del&gt;</del><br>
-		<sub>&lt;sub&gt;</sub><br>
-		<sup>&lt;sup&gt;</sup><br>
-		<video src="files/graphics/videos/mp4/tanav_playing_piano.mp4"
-		poster="files/graphics/images/png/tanav_playing_piano.jpg"
-		width="313"
-		height="556"
-		autoplay
-		controls
-		loop>
-		</video><br>
-		<iframe width="560" height="315" src="https://www.youtube.com/embed/Qskm9MTz2V4?si=dspJ4gnVkPuI9M9l" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><br>
-		<audio src="files/graphics/audio/mp3/smb_rush_a.mp3"
-		autoplay
-		controls
-		loop>
-		</audio>
-		<a href="downloads/downloads.html">01.html</a>
-	</body>
-</hmtl>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Box Grid Layout</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #111;
+    }
+    .menu-bar {
+      background-color: #550000;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      font-weight: bold;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 10px;
+    }
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+      background-color: #333;
+      padding: 10px;
+      gap: 10px;
+    }
+    .highlight-row {
+      background-color: red;
+      padding: 10px;
+    }
+    .box {
+      background-color: #ccc;
+      padding: 20px;
+      flex: 1;
+      text-align: center;
+      font-weight: bold;
+    }
+    .half {
+      flex: 0 0 48%;
+    }
+  </style>
+</head>
+<body>
+  <div class="menu-bar">MENU BAR</div>
+  <div class="container">
+
+    <!-- Row 1 -->
+    <div class="row">
+      <div class="box half">TEXT</div>
+      <div class="box">TEXT</div>
+      <div class="box half">TEXT</div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="row highlight-row">
+      <div class="box">TEXT</div>
+      <div class="box half">TEXT</div>
+      <div class="box half">TEXT</div>
+    </div>
+
+    <!-- Row 3 -->
+    <div class="row">
+      <div class="box half">TEXT</div>
+      <div class="box">TEXT</div>
+      <div class="box half">TEXT</div>
+    </div>
+
+    <!-- Row 4 -->
+    <div class="row highlight-row">
+      <div class="box">TEXT</div>
+      <div class="box half">TEXT</div>
+      <div class="box half">TEXT</div>
+    </div>
+
+    <!-- Row 5 -->
+    <div class="row">
+      <div class="box half">TEXT</div>
+      <div class="box">TEXT</div>
+      <div class="box half">TEXT</div>
+    </div>
+
+    <!-- Row 6 -->
+    <div class="row highlight-row">
+      <div class="box">TEXT</div>
+      <div class="box half">TEXT</div>
+      <div class="box half">TEXT</div>
+    </div>
+
+  </div>
+</body>
+</html>
