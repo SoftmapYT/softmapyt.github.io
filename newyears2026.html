@@ -4,21 +4,17 @@
 <meta charset="UTF-8">
 <title>New Year Countdown</title>
 
-<!-- Inter Bold -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet">
 
 <style>
-  /* === STREAM OVERLAY MODE === */
-  /* body { background: transparent; } */
-
   body {
     margin: 0;
     height: 100vh;
     background: black;
     color: white;
-    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: "Inter", system-ui, sans-serif;
     font-weight: 700;
     display: flex;
     flex-direction: column;
@@ -37,7 +33,6 @@
     font-size: 8rem;
     display: flex;
     gap: 0.05em;
-    overflow: hidden;
     height: 1em;
     letter-spacing: -0.04em;
     z-index: 2;
@@ -46,45 +41,34 @@
   .digit {
     position: relative;
     width: 1ch;
-    text-align: center;
+    overflow: hidden;
   }
 
   .digit span {
     position: absolute;
     width: 100%;
     left: 0;
-    transition:
-      transform 1.25s cubic-bezier(0.25, 1, 0.4, 1),
-      opacity 1.1s ease;
+    text-align: center;
+    transition: transform 1s cubic-bezier(0.25, 1, 0.4, 1),
+                opacity 0.6s ease;
   }
 
-  .current {
-    transform: translateY(0);
-    opacity: 1;
-  }
-
-  .next {
-    transform: translateY(-120%);
-    opacity: 0;
-  }
-
-  .digit.animate .current {
-    transform: translateY(120%);
-    opacity: 0;
-  }
-
-  .digit.animate .next {
-    transform: translateY(0);
-    opacity: 1;
-  }
-
-  .countdown {
-    margin-top: 1rem;
-    font-size: 1.6rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    opacity: 0.85;
+  .timers {
+    margin-top: 1.5rem;
+    text-align: center;
     z-index: 2;
+  }
+
+  .main-timer {
+    font-size: 2rem;
+    letter-spacing: 0.15em;
+  }
+
+  .seconds-timer {
+    margin-top: 0.4rem;
+    font-size: 1rem;
+    opacity: 0.6;
+    letter-spacing: 0.08em;
   }
 </style>
 </head>
@@ -94,31 +78,35 @@
 
 <div class="year">
   <span>2</span><span>0</span><span>2</span>
-  <div class="digit" id="lastDigit">
-    <span class="current">5</span>
-    <span class="next">6</span>
+  <div class="digit">
+    <span id="five">5</span>
+    <span id="six">6</span>
   </div>
 </div>
 
-<div class="countdown" id="countdownText"></div>
+<div class="timers">
+  <div class="main-timer" id="mainTimer"></div>
+  <div class="seconds-timer" id="secondsTimer"></div>
+</div>
 
 <script>
-/* =========================
-   TIME + DIGIT ANIMATION
-========================= */
-const countdownText = document.getElementById("countdownText");
-const lastDigit = document.getElementById("lastDigit");
+/* ================= TIME ================= */
+const mainTimer = document.getElementById("mainTimer");
+const secondsTimer = document.getElementById("secondsTimer");
+const five = document.getElementById("five");
+const six = document.getElementById("six");
 
 const target = new Date(new Date().getFullYear() + 1, 0, 1);
-let switched = false;
-let fired = false;
+let finished = false;
 
-/* =========================
-   AUDIO
-========================= */
+five.style.transform = "translateY(0%)";
+six.style.transform = "translateY(-120%)";
+six.style.opacity = 0;
+
+/* ================= AUDIO ================= */
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
-function beep(freq, duration = 0.08) {
+function beep(freq, duration = 0.06) {
   const osc = audioCtx.createOscillator();
   const gain = audioCtx.createGain();
   osc.frequency.value = freq;
@@ -134,9 +122,7 @@ function chime() {
   );
 }
 
-/* =========================
-   FIREWORKS
-========================= */
+/* ================= FIREWORKS ================= */
 const canvas = document.getElementById("fireworks");
 const ctx = canvas.getContext("2d");
 
@@ -178,15 +164,14 @@ function animateFireworks() {
 }
 animateFireworks();
 
-/* =========================
-   MAIN LOOP
-========================= */
+/* ================= MAIN LOOP ================= */
 function update() {
   const now = new Date();
   const diff = target - now;
 
-  if (diff <= 0 && !fired) {
-    countdownText.textContent = "Happy New Year";
+  if (diff <= 0 && !finished) {
+    mainTimer.textContent = "00";
+    secondsTimer.textContent = "Happy New Year";
     chime();
 
     for (let i = 0; i < 7; i++) {
@@ -197,18 +182,38 @@ function update() {
         ), i * 280);
     }
 
-    fired = true;
+    finished = true;
     return;
   }
 
-  const seconds = Math.floor(diff / 1000);
-  countdownText.textContent = `Midnight in ${seconds}`;
+  const totalSeconds = Math.floor(diff / 1000);
+  secondsTimer.textContent = `${totalSeconds} seconds remaining`;
 
-  if (seconds <= 10) beep(900);
+  let remaining = totalSeconds;
 
-  if (seconds <= 10 && !switched) {
-    lastDigit.classList.add("animate");
-    switched = true;
+  const hours = Math.floor(remaining / 3600);
+  remaining %= 3600;
+  const minutes = Math.floor(remaining / 60);
+  const seconds = remaining % 60;
+
+  const parts = [];
+  if (hours > 0) parts.push(String(hours).padStart(2, "0"));
+  if (minutes > 0 || hours > 0) parts.push(String(minutes).padStart(2, "0"));
+  parts.push(String(seconds).padStart(2, "0"));
+
+  mainTimer.textContent = parts.join(" : ");
+
+  if (seconds <= 10) {
+    beep(900);
+
+    const progress = (10 - seconds) / 10;
+    const down = progress * 120;
+
+    five.style.transform = `translateY(${down}%)`;
+    five.style.opacity = 1 - progress;
+
+    six.style.transform = `translateY(${down - 120}%)`;
+    six.style.opacity = progress;
   }
 }
 
