@@ -29,13 +29,59 @@
     pointer-events: none;
   }
 
+  .stage {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    z-index: 2;
+  }
+
+  /* ==== TICK BARS ==== */
+  .tick-bar {
+    position: relative;
+    width: 12px;
+    height: 220px;
+  }
+
+  .tick-bar::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      repeating-linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.35),
+        rgba(255,255,255,0.35) 2px,
+        transparent 2px,
+        transparent 14px
+      );
+  }
+
+  .indicator {
+    position: absolute;
+    left: -4px;
+    width: 20px;
+    height: 4px;
+    border-radius: 2px;
+    transition: transform 0.9s cubic-bezier(0.25, 1, 0.4, 1),
+                opacity 0.6s ease;
+  }
+
+  .indicator.blue {
+    background: #3b82f6;
+  }
+
+  .indicator.red {
+    background: #ef4444;
+  }
+
+  /* ==== YEAR ==== */
   .year {
     font-size: 8rem;
     display: flex;
     gap: 0.05em;
     height: 1em;
     letter-spacing: -0.04em;
-    z-index: 2;
   }
 
   .digit {
@@ -53,6 +99,7 @@
                 opacity 0.6s ease;
   }
 
+  /* ==== TIMERS ==== */
   .timers {
     margin-top: 1.5rem;
     text-align: center;
@@ -76,11 +123,26 @@
 
 <canvas id="fireworks"></canvas>
 
-<div class="year">
-  <span>2</span><span>0</span><span>2</span>
-  <div class="digit">
-    <span id="five">5</span>
-    <span id="six">6</span>
+<div class="stage">
+  <!-- LEFT TICK BAR -->
+  <div class="tick-bar">
+    <div class="indicator blue" id="blueTick"></div>
+    <div class="indicator red" id="redTick"></div>
+  </div>
+
+  <!-- YEAR -->
+  <div class="year">
+    <span>2</span><span>0</span><span>2</span>
+    <div class="digit">
+      <span id="five">5</span>
+      <span id="six">6</span>
+    </div>
+  </div>
+
+  <!-- RIGHT TICK BAR -->
+  <div class="tick-bar">
+    <div class="indicator blue"></div>
+    <div class="indicator red"></div>
   </div>
 </div>
 
@@ -90,18 +152,26 @@
 </div>
 
 <script>
-/* ================= TIME ================= */
+/* ================= ELEMENTS ================= */
 const mainTimer = document.getElementById("mainTimer");
 const secondsTimer = document.getElementById("secondsTimer");
 const five = document.getElementById("five");
 const six = document.getElementById("six");
+const blueTick = document.getElementById("blueTick");
+const redTick = document.getElementById("redTick");
 
+/* ================= TIME ================= */
 const target = new Date(new Date().getFullYear() + 1, 0, 1);
 let finished = false;
 
+/* Initial positions */
 five.style.transform = "translateY(0%)";
 six.style.transform = "translateY(-120%)";
 six.style.opacity = 0;
+
+blueTick.style.transform = "translateY(0px)";
+redTick.style.transform = "translateY(220px)";
+redTick.style.opacity = 0;
 
 /* ================= AUDIO ================= */
 const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
@@ -189,24 +259,21 @@ function update() {
   const totalSeconds = Math.floor(diff / 1000);
   secondsTimer.textContent = `${totalSeconds} seconds remaining`;
 
-  let remaining = totalSeconds;
-
-  const hours = Math.floor(remaining / 3600);
-  remaining %= 3600;
-  const minutes = Math.floor(remaining / 60);
-  const seconds = remaining % 60;
+  let r = totalSeconds;
+  const h = Math.floor(r / 3600); r %= 3600;
+  const m = Math.floor(r / 60);
+  const s = r % 60;
 
   const parts = [];
-  if (hours > 0) parts.push(String(hours).padStart(2, "0"));
-  if (minutes > 0 || hours > 0) parts.push(String(minutes).padStart(2, "0"));
-  parts.push(String(seconds).padStart(2, "0"));
+  if (h > 0) parts.push(String(h).padStart(2, "0"));
+  if (m > 0 || h > 0) parts.push(String(m).padStart(2, "0"));
+  parts.push(String(s).padStart(2, "0"));
 
   mainTimer.textContent = parts.join(" : ");
 
-  if (seconds <= 10) {
-    beep(900);
-
-    const progress = (10 - seconds) / 10;
+  /* ==== FINAL 60-SECOND TRANSITION ==== */
+  if (totalSeconds <= 60) {
+    const progress = (60 - totalSeconds) / 60; // 0 → 1
     const down = progress * 120;
 
     five.style.transform = `translateY(${down}%)`;
@@ -214,6 +281,15 @@ function update() {
 
     six.style.transform = `translateY(${down - 120}%)`;
     six.style.opacity = progress;
+
+    const barHeight = 220;
+    blueTick.style.transform = `translateY(${progress * barHeight}px)`;
+    redTick.style.transform = `translateY(${(1 - progress) * barHeight}px)`;
+    redTick.style.opacity = progress;
+  }
+
+  if (totalSeconds <= 10 && totalSeconds > 0) {
+    beep(900);
   }
 }
 
