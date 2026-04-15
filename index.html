@@ -1,97 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Box Grid Layout</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: sans-serif;
-      background-color: #111;
-    }
-    .menu-bar {
-      background-color: #550000;
-      color: #fff;
-      text-align: center;
-      padding: 10px;
-      font-weight: bold;
-    }
-    .container {
-      max-width: 600px;
-      margin: 0 auto;
-      padding: 10px;
-    }
-    .row {
-      display: flex;
-      flex-wrap: wrap;
-      margin-bottom: 10px;
-      background-color: #333;
-      padding: 10px;
-      gap: 10px;
-    }
-    .highlight-row {
-      background-color: red;
-      padding: 10px;
-    }
-    .box {
-      background-color: #ccc;
-      padding: 20px;
-      flex: 1;
-      text-align: center;
-      font-weight: bold;
-    }
-    .half {
-      flex: 0 0 48%;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Softmap's Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background: #35424a;
+            color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        section {
+            padding: 20px;
+            margin: 20px;
+            background: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            margin: 0;
+        }
+        .contact {
+            margin-top: 10px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px 0;
+            background: #35424a;
+            color: #ffffff;
+        }
+    </style>
 </head>
 <body>
-  <div class="menu-bar">MENU BAR</div>
-  <div class="container">
-
-    <!-- Row 1 -->
-    <div class="row">
-      <div class="box half">TEXT</div>
-      <div class="box">TEXT</div>
-      <div class="box half">TEXT</div>
-    </div>
-
-    <!-- Row 2 -->
-    <div class="row highlight-row">
-      <div class="box">TEXT</div>
-      <div class="box half">TEXT</div>
-      <div class="box half">TEXT</div>
-    </div>
-
-    <!-- Row 3 -->
-    <div class="row">
-      <div class="box half">TEXT</div>
-      <div class="box">TEXT</div>
-      <div class="box half">TEXT</div>
-    </div>
-
-    <!-- Row 4 -->
-    <div class="row highlight-row">
-      <div class="box">TEXT</div>
-      <div class="box half">TEXT</div>
-      <div class="box half">TEXT</div>
-    </div>
-
-    <!-- Row 5 -->
-    <div class="row">
-      <div class="box half">TEXT</div>
-      <div class="box">TEXT</div>
-      <div class="box half">TEXT</div>
-    </div>
-
-    <!-- Row 6 -->
-    <div class="row highlight-row">
-      <div class="box">TEXT</div>
-      <div class="box half">TEXT</div>
-      <div class="box half">TEXT</div>
-    </div>
-
-  </div>
+    <header>
+        <h1>Softmap</h1>
+        <div class="contact">Email: <a href="mailto:softmapyt@gmail.com" style="color: #ffffff;">softmapyt@gmail.com</a></div>
+    </header>
+    <section>
+        <h2>About Me</h2>
+        <p>Hi! I'm Softmap, a 15-year-old artist who codes, draws, and loves playing games. I express myself through my art
+        and share my creative journey with the world. Welcome to my portfolio!</p>
+    </section>
+    <footer>
+        &copy; 2026 Softmap
+    </footer>
 </body>
 </html>
