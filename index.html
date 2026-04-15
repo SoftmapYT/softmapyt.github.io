@@ -18,6 +18,38 @@
             padding: 20px 0;
             text-align: center;
         }
+        .banner {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #ffffff;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        .banner h1 {
+            margin: 0 0 15px 0;
+            font-size: 3em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .socials {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .social-link {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            padding: 8px 15px;
+            border: 2px solid #ffffff;
+            border-radius: 5px;
+        }
+        .social-link:hover {
+            background-color: #ffffff;
+            color: #667eea;
+            transform: scale(1.05);
+        }
         section {
             padding: 20px;
             margin: 20px;
@@ -31,6 +63,32 @@
         .contact {
             margin-top: 10px;
         }
+        .music-item {
+            border-left: 4px solid #667eea;
+            padding-left: 15px;
+            margin: 15px 0;
+        }
+        .music-item h3 {
+            margin: 0 0 5px 0;
+            color: #667eea;
+        }
+        .music-item p {
+            margin: 5px 0;
+            font-size: 0.95em;
+        }
+        .music-link {
+            display: inline-block;
+            margin-top: 8px;
+            padding: 8px 15px;
+            background-color: #667eea;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 3px;
+            transition: background-color 0.3s ease;
+        }
+        .music-link:hover {
+            background-color: #764ba2;
+        }
         footer {
             text-align: center;
             margin-top: 20px;
@@ -41,14 +99,26 @@
     </style>
 </head>
 <body>
-    <header>
-        <h1>Softmap</h1>
-        <div class="contact">Email: <a href="mailto:softmapyt@gmail.com" style="color: #ffffff;">softmapyt@gmail.com</a></div>
-    </header>
+    <div class="banner">
+        <h1>SOFTMAP</h1>
+        <div class="socials">
+            <a href="https://youtube.com/@SoftmapYT" class="social-link">YouTube</a>
+            <a href="mailto:softmapyt@gmail.com" class="social-link">Email</a>
+        </div>
+    </div>
     <section>
         <h2>About Me</h2>
-        <p>Hi! I'm Softmap, a 15-year-old artist who codes, draws, and loves playing games. I express myself through my art
-        and share my creative journey with the world. Welcome to my portfolio!</p>
+        <p>Hi! I'm Softmap, a 15-year-old artist who codes, draws, loves playing games, and makes music. I express myself through my art and share my creative journey with the world. Welcome to my portfolio!</p>
+    </section>
+    <section>
+        <h2>Music</h2>
+        <div class="music-item">
+            <h3>NOITE CAI</h3>
+            <p><strong>Genre:</strong> Brazilian Funk/Phonk</p>
+            <p><strong>Release Date:</strong> April 3, 2026</p>
+            <p>A high-energy Brazilian funk/phonk track that showcases my creative expression through music production.</p>
+            <a href="https://www.youtube.com/results?search_query=Softmap+NOITE+CAI" class="music-link">Listen on YouTube</a>
+        </div>
     </section>
     <footer>
         &copy; 2026 Softmap
