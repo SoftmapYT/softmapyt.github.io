@@ -4,22 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Softmap's Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Inter', 'Geist', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f5f1f0;
             color: #333;
         }
         header {
-            background: #35424a;
+            background: #8b0000;
             color: #ffffff;
             padding: 20px 0;
             text-align: center;
         }
         .banner {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #dc143c 0%, #8b0000 100%);
             color: #ffffff;
             padding: 30px 20px;
             text-align: center;
@@ -28,6 +31,8 @@
         .banner h1 {
             margin: 0 0 15px 0;
             font-size: 3em;
+            font-weight: 700;
+            font-family: 'Geist', sans-serif;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
         .socials {
@@ -40,6 +45,7 @@
             color: #ffffff;
             text-decoration: none;
             font-size: 1.1em;
+            font-weight: 500;
             transition: all 0.3s ease;
             padding: 8px 15px;
             border: 2px solid #ffffff;
@@ -47,7 +53,7 @@
         }
         .social-link:hover {
             background-color: #ffffff;
-            color: #667eea;
+            color: #dc143c;
             transform: scale(1.05);
         }
         section {
@@ -57,44 +63,53 @@
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        h1 {
-            margin: 0;
+        h1, h2 {
+            font-family: 'Geist', sans-serif;
+            font-weight: 700;
+        }
+        h2 {
+            color: #dc143c;
         }
         .contact {
             margin-top: 10px;
         }
         .music-item {
-            border-left: 4px solid #667eea;
+            border-left: 4px solid #dc143c;
             padding-left: 15px;
             margin: 15px 0;
         }
         .music-item h3 {
             margin: 0 0 5px 0;
-            color: #667eea;
+            color: #dc143c;
+            font-family: 'Geist', sans-serif;
+            font-weight: 600;
         }
         .music-item p {
             margin: 5px 0;
             font-size: 0.95em;
+            font-family: 'Inter', sans-serif;
         }
         .music-link {
             display: inline-block;
             margin-top: 8px;
             padding: 8px 15px;
-            background-color: #667eea;
+            background-color: #dc143c;
             color: #ffffff;
             text-decoration: none;
             border-radius: 3px;
+            font-weight: 500;
             transition: background-color 0.3s ease;
         }
         .music-link:hover {
-            background-color: #764ba2;
+            background-color: #8b0000;
         }
         footer {
             text-align: center;
             margin-top: 20px;
             padding: 10px 0;
-            background: #35424a;
+            background: #8b0000;
             color: #ffffff;
+            font-family: 'Inter', sans-serif;
         }
     </style>
 </head>
